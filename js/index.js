@@ -83,5 +83,17 @@ document.forms["signup-login-form"].addEventListener("submit", e => {
     }
 })
 
+function togggle_nav_bar() {
+    document.querySelector(".side-nav-bar ").classList.toggle("out-of-view")
+}
 
+document.getElementById("toggle-nav-bar").addEventListener("click", e => {
+    togggle_nav_bar()
+})
+
+document.querySelector(".side-nav-bar").addEventListener("click", e => {
+    if(e.target !== document.querySelector(".side-nav-bar")) return
+
+    togggle_nav_bar()
+})
 addEventListener("DOMContentLoaded", () => prefill_ui_with_data())
